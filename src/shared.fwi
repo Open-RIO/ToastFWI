@@ -1,4 +1,4 @@
-namespace Toast::Memory::Shared
+namespace Toast::Memory
 
 import shared/digital.fwi
 import shared/relay.fwi
@@ -24,8 +24,8 @@ enum ModuleActState {
     RESTARTED = 4
 }
 
-using namespace IO {
-    block Shared {
+using namespace Shared {
+    block SharedPool {
         u8          endian
         int         bootstrap_pid
         RobotState  state_current
@@ -34,20 +34,20 @@ using namespace IO {
 
         bool            debug
         ModuleActState  module_activity_state[128]
-        Power           power                               getter=power
-        DIO             dio[26]                             getter=dio
-        Relay           relay[4]                            getter=relay
-        AnalogOut       analog_out[2]                       getter=analog_out
-        AnalogIn        analog_in[8]                        getter=analog_in
-        AnalogInSettings analog_in_settings                 getter=analog_in_settings
-        Pneumatics      pneumatics[2]                       getter=pneumatics
-        Motor           motors[16]                          getter=motor
-        MotorSRXExtended motors_srx[16]                     getter=srx
-        PWM             pwm[20]                             getter=pwm
-        Servo           servos[20]                          getter=servo
-        ServoStatic     servo_static                        getter=servo_static
-        OnboardAccel    onboard_accel                       getter=onboard_accel
-        DS::Joysticks   joysticks[6]                        getter=joystick
-        DS::DSInfo      ds_info                             getter=ds_info
+        IO::Power           power                               getter=power
+        IO::DIO             dio[26]                             getter=dio
+        IO::Relay           relay[4]                            getter=relay
+        IO::AnalogOut       analog_out[2]                       getter=analog_out
+        IO::AnalogIn        analog_in[8]                        getter=analog_in
+        IO::AnalogInSettings analog_in_settings                 getter=analog_in_settings
+        IO::Pneumatics      pneumatics[2]                       getter=pneumatics
+        IO::Motor           motors[16]                          getter=motor
+        IO::MotorSRXExtended motors_srx[16]                     getter=srx
+        IO::PWM             pwm[20]                             getter=pwm
+        IO::Servo           servos[20]                          getter=servo
+        IO::ServoStatic     servo_static                        getter=servo_static
+        IO::OnboardAccel    onboard_accel                       getter=onboard_accel
+        DS::Joysticks       joysticks[6]                        getter=joystick
+        DS::DSInfo          ds_info                             getter=ds_info
     }
 }

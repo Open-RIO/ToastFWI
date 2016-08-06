@@ -1,4 +1,4 @@
-namespace Toast::Memory::Private
+namespace Toast::Memory
 
 enum Verification {
     # Initial value of the verification byte
@@ -17,7 +17,7 @@ enum Verification {
     VERIFY_VALID = 120
 }
 
-block Private {
+block PrivatePool {
     u8          endian
     Verification verification
     bool        restart

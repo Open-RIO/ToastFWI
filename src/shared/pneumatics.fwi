@@ -1,0 +1,23 @@
+namespace Toast::Memory::Shared::IO
+
+block Pneumatics {
+    bool        init, bootstrap
+    u8          pcm_can_id
+
+    bool        fault_comp_too_high, fault_comp_too_high_sticky
+    bool        fault_comp_shorted, fault_comp_shorted_sticky
+    bool        fault_comp_not_conn, fault_comp_not_conn_sticky
+    bool        comp_sticky_clear_pending
+
+    bool        pressure_switch, closed_loop, is_enabled
+    bool        start_pending, stop_pending
+    bool        closed_loop_mode_pending
+
+    bool        solenoid[8]
+    bool        solenoid_black[8]
+
+    bool        fault_sol_volt, fault_sol_volt_sticky
+    bool        sol_sticky_clear_pending
+
+    float       comp_current
+}

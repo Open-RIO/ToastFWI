@@ -1,0 +1,25 @@
+namespace Toast::Memory::Shared::DS
+
+enum Alliance {
+    Unknown, Red, Blue
+}
+
+block Joysticks {
+    bool        init, bootstrap
+    u8          num_axis, num_button, num_pov
+    bool        button[32]
+
+    i16         pov[4]
+    i8          axis[16]
+
+    i16         rumble_l, rumble_r
+    bool        outputs[32]
+}
+
+block DSInfo {
+    bool        ds_attached, new_control_data, fms_attached
+    bool        system_active
+    float       match_time
+    Alliance    alliance
+    u8          alliance_station
+}

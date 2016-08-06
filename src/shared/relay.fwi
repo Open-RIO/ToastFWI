@@ -1,0 +1,6 @@
+namespace Toast::Memory::Shared::IO
+
+block Relay {
+    bool        init, bootstrap
+    bool        fwd, rvs
+}

@@ -1,0 +1,28 @@
+namespace Toast::Memory::Private
+
+enum Verification {
+    # Initial value of the verification byte
+    VERIFY_AWAIT = 100
+    # Verification Byte equals expected value (VERIFY_AWAIT)
+    VERIFY_CONFIRM = 101
+    # Verification Byte does NOT equal expected value (!= VERIFY_AWAIT)
+    VERIFY_DENIED = 102
+
+    # _get_module_information method missing
+    VERIFY_INFO_METHOD_MISSING = 110
+    # _allocate_module_instance method missing
+    VERIFY_ALLOC_METHOD_MISSING = 111
+
+    # All valid, module is ready
+    VERIFY_VALID = 120
+}
+
+block Private {
+    u8          endian
+    Verification verification
+    bool        restart
+    bool        info_set
+
+    string      module_name 48
+    string      module_filepath 256
+}

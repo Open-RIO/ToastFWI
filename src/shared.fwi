@@ -1,0 +1,53 @@
+namespace Toast::Memory::Shared
+
+import shared/digital.fwi
+import shared/relay.fwi
+import shared/power.fwi
+import shared/analog.fwi
+import shared/pneumatics.fwi
+import shared/motor.fwi
+import shared/sensor.fwi
+import shared/ds.fwi
+
+enum RobotState {
+    DISABLED = 0
+    AUTO
+    TELEOP
+    TEST
+}
+
+enum ModuleActState {
+    NOT_FOUND = 0,
+    DISCOVERED = 1,
+    ACTIVE = 2,
+    CRASHED = 3,
+    RESTARTED = 4
+}
+
+using namespace IO {
+    block Shared {
+        u8          endian
+        int         bootstrap_pid
+        RobotState  state_current
+        RobotState  state_last
+        u8          tick_timing
+
+        bool            debug
+        ModuleActState  module_activity_state[128]
+        Power           power                               getter=power
+        DIO             dio[26]                             getter=dio
+        Relay           relay[4]                            getter=relay
+        AnalogOut       analog_out[2]                       getter=analog_out
+        AnalogIn        analog_in[8]                        getter=analog_in
+        AnalogInSettings analog_in_settings                 getter=analog_in_settings
+        Pneumatics      pneumatics[2]                       getter=pneumatics
+        Motor           motors[16]                          getter=motor
+        MotorSRXExtended motors_srx[16]                     getter=srx
+        PWM             pwm[20]                             getter=pwm
+        Servo           servos[20]                          getter=servo
+        ServoStatic     servo_static                        getter=servo_static
+        OnboardAccel    onboard_accel                       getter=onboard_accel
+        DS::Joysticks   joysticks[6]                        getter=joystick
+        DS::DSInfo      ds_info                             getter=ds_info
+    }
+}

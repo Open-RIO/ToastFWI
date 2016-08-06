@@ -1,0 +1,21 @@
+namespace Toast::Memory::Shared::IO
+
+enum DIO_Mode {
+    INPUT = 1, OUTPUT
+}
+
+block DIO {
+    bool        init, bootstrap
+    DIO_Mode    mode
+    bool        value
+
+    bool        pwm_enabled, pwm_enabled_pending
+    bool        is_pulsing                          getter=is_pulsing
+    bool        pulse_pending
+    bool        pwm_rate_pending
+    bool        pwm_duty_cycle_pending
+
+    float       pulse_length
+    float       pwm_duty_cycle
+    float       pwm_rate
+}

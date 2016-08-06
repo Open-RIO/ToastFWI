@@ -1,0 +1,12 @@
+namespace Toast::Memory::Shared::IO
+
+enum AccelRange {
+    Range_2G, Range_4G, Range_8G, Range_16G
+}
+
+block OnboardAccel {
+    bool        init, bootstrap
+    AccelRange  range
+    bool        range_update
+    float       x, y, z
+}

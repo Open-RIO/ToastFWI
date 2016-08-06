@@ -1,0 +1,29 @@
+namespace Toast::Memory::Shared::IO
+
+block AnalogOut {
+    bool init, bootstrapped
+    float voltage
+}
+
+block AnalogIn {
+    bool        init, bootstrap
+    i16         value
+    i32         average_value
+    float       voltage, average_voltage
+
+    u32         average_bits
+    u32         oversample_bits
+    u32         lsb_weight
+    i32         offset
+
+    bool        is_accum, accum_pending, accum_reset_pending
+    bool        accum_initial_pending, accum_centre_pending
+
+    u32         accum_count
+    i32         accum_deadband, accum_centre
+    i64         accum_value, accum_initial
+}
+
+block AnalogInSettings {
+    float       sample_rate
+}

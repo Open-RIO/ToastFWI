@@ -1,0 +1,22 @@
+namespace Toast::Memory::Shared::IO
+
+block Power {
+    u8          pdp_can_id
+
+    double      pdp_voltage
+    float       pdp_temperature
+    double      pdp_total_power, pdp_total_energy, pdp_total_current
+
+    double      pdp_current[16]
+
+    double      rio_input_voltage, rio_input_current
+    u16         rio_faults_3V3
+    u16         rio_faults_5V
+    u16         rio_faults_6V
+    bool        rio_3V3_enabled
+    bool        rio_5V_enabled
+    bool        rio_6V_enabled
+    bool        rio_brownout
+    double      rio_voltage_3V3, rio_voltage_5V, rio_voltage_6V
+    double      rio_current_3V3, rio_current_5V, rio_current_6V
+}

@@ -47,7 +47,7 @@ using namespace Shared {
         IO::Servo           servos[20]                          getter=servo
         IO::ServoStatic     servo_static                        getter=servo_static
         IO::OnboardAccel    onboard_accel                       getter=onboard_accel
-        DS::Joysticks       joysticks[6]                        getter=joystick
+        DS::Joystick        joysticks[6]                        getter=joystick
         DS::DSInfo          ds_info                             getter=ds_info
     }
 }

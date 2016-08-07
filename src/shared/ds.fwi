@@ -4,7 +4,7 @@ enum Alliance {
     Unknown, Red, Blue
 }
 
-block Joysticks {
+block Joystick {
     bool        init, bootstrap
     u8          num_axis, num_button, num_pov
     bool        button[32]

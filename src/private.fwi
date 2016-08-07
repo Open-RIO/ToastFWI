@@ -8,10 +8,12 @@ enum Verification {
     # Verification Byte does NOT equal expected value (!= VERIFY_AWAIT)
     VERIFY_DENIED = 102
 
+    # Dynamic Library file is missing or corrupt
+    VERIFY_CORRUPT_LIBRARY = 110
     # _get_module_information method missing
-    VERIFY_INFO_METHOD_MISSING = 110
+    VERIFY_INFO_METHOD_MISSING = 111
     # _allocate_module_instance method missing
-    VERIFY_ALLOC_METHOD_MISSING = 111
+    VERIFY_ALLOC_METHOD_MISSING = 112
 
     # All valid, module is ready
     VERIFY_VALID = 120

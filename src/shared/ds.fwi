@@ -7,13 +7,13 @@ enum Alliance {
 block Joystick {
     bool        init, bootstrap
     u8          num_axis, num_button, num_pov
-    bool        button[32]
+    u32         button_mask
+    u32         outputs_mask
 
     i16         pov[4]
     i8          axis[16]
 
     i16         rumble_l, rumble_r
-    bool        outputs[32]
 }
 
 block DSInfo {

@@ -4,6 +4,42 @@ enum Alliance {
     Unknown, Red, Blue
 }
 
+enum JoystickType {
+    UNKNOWN = 0
+    XINPUT_GAMEPAD = 1
+    XINPUT_WHEEL = 2
+    XINPUT_ARCADE = 3
+    XINPUT_FLIGHT_STICK = 4
+    XINPUT_DANCE_PAD = 5
+    XINPUT_GUITAR = 6
+    XINPUT_GUITAR_2 = 7
+    XINPUT_DRUM_KIT = 8
+    XINPUT_GUITAR_3 = 11
+    XINPUT_ARCADE_PAD = 19
+    HID_JOYSTICK = 20
+    HID_GAMEPAD = 21
+    HID_DRIVING = 22
+    HID_FLIGHT = 23
+    HID_FIRST_PERSON = 24
+}
+
+enum JoystickAxisType {
+    X = 0
+    Y = 1
+    Z = 2
+    TWIST = 3
+    THROTTLE = 4
+}
+
+block JoystickDescriptor {
+    bool        is_xbox
+    JoystickType type
+    u8          name_length
+    string      name 60
+    u8          axis_count
+    JoystickAxisType axis_type[16]
+}
+
 block Joystick {
     bool        init, bootstrap
     u8          num_axis, num_button, num_pov
@@ -14,6 +50,8 @@ block Joystick {
     i8          axis[16]
 
     i16         rumble_l, rumble_r
+
+    JoystickDescriptor descriptor
 }
 
 block DSInfo {

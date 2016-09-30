@@ -27,7 +27,7 @@ block MotorSRXExtended {
     bool        pid_pending
 
     float       bus_voltage, output_voltage, output_current, temperature
-    double      position, speed
+    float      position, speed
     
     int         enc_position, enc_velocity
     int         analog_in, analog_in_raw, analog_in_vel
@@ -64,6 +64,6 @@ block PWM {
     u16         raw
     float       position, speed
 
-    double      bounds_max, bounds_min, bounds_deadband_max, bounds_deadband_min, bounds_center
+    float       bounds_max, bounds_min, bounds_deadband_max, bounds_deadband_min, bounds_center
     bool        bounds_int32        // False for floating point, if true, casting required
 }

@@ -5,7 +5,7 @@ enum MotorInterface {
 }
 
 enum MotorType {
-    Talon = 0x01, TalonSRX, CANTalon
+    Talon = 0x01, TalonSRX
     Victor = 0x10, VictorSP
     SD540 = 0x20
     Spark = 0x30
@@ -17,31 +17,6 @@ block Motor {
     MotorType       type
     MotorInterface  interface
     float      value
-}
-
-# This isn't quite done yet
-block MotorSRXExtended {
-    bool        lim_fwd_closed, lim_fwd_ok
-    bool        lim_rvs_closed, lim_rvs_ok
-    float       p, i, d, f
-    bool        pid_pending
-
-    float       bus_voltage, output_voltage, output_current, temperature
-    double      position, speed
-    
-    int         enc_position, enc_velocity
-    int         analog_in, analog_in_raw, analog_in_vel
-    int         quad_a, quad_b, quad_idx, quad_idx_rises
-
-    int         pulse_width_position, pulse_width_vel
-    int         pulse_width_rtf, pulse_width_rtr
-
-    bool        quad_idx_rises_pending, pulse_width_position_pending
-
-    u16         faults, faults_sticky
-    bool        clear_sticky_pending
-    
-    u32         firmware_version
 }
 
 block Servo {

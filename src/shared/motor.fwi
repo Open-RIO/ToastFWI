@@ -39,6 +39,6 @@ block PWM {
     u16         raw
     float       position, speed
 
-    double      bounds_max, bounds_min, bounds_deadband_max, bounds_deadband_min, bounds_center
+    float       bounds_max, bounds_min, bounds_deadband_max, bounds_deadband_min, bounds_center
     bool        bounds_int32        // False for floating point, if true, casting required
 }

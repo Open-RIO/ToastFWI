@@ -42,7 +42,6 @@ using namespace Shared {
         IO::AnalogInSettings analog_in_settings                 getter=analog_in_settings
         IO::Pneumatics      pneumatics[2]                       getter=pneumatics
         IO::Motor           motors[16]                          getter=motor
-        IO::MotorSRXExtended motors_srx[16]                     getter=srx
         IO::PWM             pwm[20]                             getter=pwm
         IO::Servo           servos[20]                          getter=servo
         IO::ServoStatic     servo_static                        getter=servo_static
